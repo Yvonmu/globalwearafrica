@@ -16,25 +16,30 @@ const Home = () => {
     e.preventDefault();
     setLoading(true);
     const data = {
-      names,email,phone,message
+      names,
+      email,
+      phone,
+      message,
     };
-    if (!email || !message){
-      alert("Please fill required field!")
-    }else{
-      await axios.post("/api/query",data).then((res)=>{
-        setQuery([...query, res.data.data]);
-        setEmail("")
-        setPhone("")
-        setMessage("")
-        setLoading(false);
-        return alert("Sent!");
-      })
-      .catch((err) => {
-        setLoading(false);
-        alert("Error sending! Kindly resend");
-      });
+    if (!email || !message) {
+      alert("Please fill required field!");
+    } else {
+      await axios
+        .post("/api/query", data)
+        .then((res) => {
+          setQuery([...query, res.data.data]);
+          setEmail("");
+          setPhone("");
+          setMessage("");
+          setLoading(false);
+          return alert("Sent!");
+        })
+        .catch((err) => {
+          setLoading(false);
+          alert("Error sending! Kindly resend");
+        });
     }
-  }
+  };
   return (
     <Layout>
       <section className="bg-[url('/images/bg.png')] bg-no-repeat bg-cover h-screen md:-mt-36"></section>
@@ -179,7 +184,7 @@ const Home = () => {
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 placeholder="John Doe"
                 value={names}
-                        onChange={(e) => setNames(e.target.value)}
+                onChange={(e) => setNames(e.target.value)}
               />
             </div>
             <div className="mb-2">
@@ -196,7 +201,7 @@ const Home = () => {
                 placeholder="info@someone.com"
                 required
                 value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="mb-2">
@@ -213,7 +218,7 @@ const Home = () => {
                 placeholder="+(xxx)xxxxxxxxxx"
                 required
                 value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
+                onChange={(e) => setPhone(e.target.value)}
               />
             </div>
             <div className="mb-6">
@@ -229,7 +234,7 @@ const Home = () => {
                 className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Leave a comment..."
                 value={message}
-                        onChange={(e) => setMessage(e.target.value)}
+                onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
             {loading ? (
@@ -287,7 +292,10 @@ const Home = () => {
                 </div>
               </div>
             ) : (
-              <button onClick={handleSubmit} className="w-full hover:bg-blue-900 bg-primary text-center py-2 font-bold text-xl">
+              <button
+                onClick={handleSubmit}
+                className="w-full hover:bg-blue-900 bg-primary text-center py-2 font-bold text-xl"
+              >
                 Submit
               </button>
             )}

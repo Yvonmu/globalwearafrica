@@ -36,13 +36,13 @@ const Footer = () => {
               <Link href="/">
                 <li className=" cursor-pointer">Home Page</li>
               </Link>
-              <Link href="/">
+              <Link href="/about">
                 <li className=" cursor-pointer">About Us</li>
               </Link>
-              <Link href="/">
+              <Link href="/product">
                 <li className=" cursor-pointer">Our Product</li>
               </Link>
-              <Link href="/cars">
+              <Link href="/contact">
                 <li className=" cursor-pointer">Contact</li>
               </Link>
             </ul>

@@ -28,10 +28,10 @@ const Navbar = () => {
               HOME
             </p>
           </Link>
-          <Link href="/" passHref>
+          <Link href="/about" passHref>
             <a
               className={
-                router.pathname == "/adf"
+                router.pathname == "/about"
                   ? "bg-orange-200 text-black cursor-pointer hover:bg-orange-300 grid place-items-center px-4"
                   : "text-black cursor-pointer hover:bg-orange-200 font-bold grid place-items-center px-4"
               }
@@ -39,7 +39,7 @@ const Navbar = () => {
               ABOUT_US
             </a>
           </Link>
-          <Link href="/" passHref>
+          <Link href="/about/#team" passHref>
             <p
               className={
                 router.pathname == "/adf"
@@ -50,10 +50,10 @@ const Navbar = () => {
               TEAM
             </p>
           </Link>
-          <Link href="/" passHref>
+          <Link href="/product" passHref>
             <p
               className={
-                router.pathname == "/adf"
+                router.pathname == "/product"
                   ? "bg-orange-200 text-black cursor-pointer hover:bg-orange-300 grid place-items-center px-4"
                   : "text-black cursor-pointer hover:bg-orange-200 font-bold grid place-items-center px-4"
               }
@@ -61,10 +61,10 @@ const Navbar = () => {
               PRODUCTS
             </p>
           </Link>
-          <Link href="/" passHref>
+          <Link href="/contact" passHref>
             <p
               className={
-                router.pathname == "/adf"
+                router.pathname == "/contact"
                   ? "bg-orange-200 text-black cursor-pointer hover:bg-orange-300 grid place-items-center px-4"
                   : "text-black cursor-pointer hover:bg-orange-200 font-bold grid place-items-center px-4"
               }
