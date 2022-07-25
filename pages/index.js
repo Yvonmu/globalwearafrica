@@ -1,14 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout";
-import { GiEarthAfricaEurope, GiGlobe, GiTruck } from "react-icons/gi";
+import { GiGlobe, GiTruck } from "react-icons/gi";
 import { RiGovernmentFill } from "react-icons/ri";
+import axios from "axios";
 
 const Home = () => {
+  const [names, setNames] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [query, setQuery] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const data = {
+      names,email,phone,message
+    };
+    if (!email || !message){
+      alert("Please fill required field!")
+    }else{
+      await axios.post("/api/query",data).then((res)=>{
+        setQuery([...query, res.data.data]);
+        setEmail("")
+        setPhone("")
+        setMessage("")
+        setLoading(false);
+        return alert("Sent!");
+      })
+      .catch((err) => {
+        setLoading(false);
+        alert("Error sending! Kindly resend");
+      });
+    }
+  }
   return (
     <Layout>
-      <section className="bg-[url('/images/bg.png')] bg-no-repeat bg-cover h-screen md:-mt-36">
-        
-      </section>
+      <section className="bg-[url('/images/bg.png')] bg-no-repeat bg-cover h-screen md:-mt-36"></section>
       <section className="mx-32 md:-mt-24">
         <div className="grid md:grid-cols-3 sm:hidden gap-x-32">
           <div className="bg-primary p-6 grid place-items-center">
@@ -149,7 +178,8 @@ const Home = () => {
                 id="name"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 placeholder="John Doe"
-                required
+                value={names}
+                        onChange={(e) => setNames(e.target.value)}
               />
             </div>
             <div className="mb-2">
@@ -165,6 +195,8 @@ const Home = () => {
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 placeholder="info@someone.com"
                 required
+                value={email}
+                        onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="mb-2">
@@ -175,11 +207,13 @@ const Home = () => {
                 Phone Number
               </label>
               <input
-                type="number"
+                type="tel"
                 id="number"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                 placeholder="+(xxx)xxxxxxxxxx"
                 required
+                value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
               />
             </div>
             <div className="mb-6">
@@ -194,30 +228,88 @@ const Home = () => {
                 rows="3"
                 className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Leave a comment..."
+                value={message}
+                        onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
-            <button className="w-full hover:bg-blue-900 bg-primary text-center py-2 font-bold text-xl">
-              Submit
-            </button>
+            {loading ? (
+              <div className="flex justify-center items-center space-x-2">
+                <div
+                  className="spinner-grow inline-block w-8 h-8 bg-current rounded-full opacity-0 text-blue-600"
+                  role="status"
+                >
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+                <div
+                  className="
+      spinner-grow inline-block w-8 h-8 bg-current rounded-full opacity-0
+        text-purple-500
+      "
+                  role="status"
+                >
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+                <div
+                  className="
+      spinner-grow inline-block w-8 h-8 bg-current rounded-full opacity-0
+        text-green-500
+      "
+                  role="status"
+                >
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+                <div
+                  className="spinner-grow inline-block w-8 h-8 bg-current rounded-full opacity-0 text-red-500"
+                  role="status"
+                >
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+                <div
+                  className="
+      spinner-grow inline-block w-8 h-8 bg-current rounded-full opacity-0
+        text-yellow-500
+      "
+                  role="status"
+                >
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+                <div
+                  className="spinner-grow inline-block w-8 h-8 bg-current rounded-full opacity-0 text-blue-300"
+                  role="status"
+                >
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+                <div
+                  className="spinner-grow inline-block w-8 h-8 bg-current rounded-full opacity-0 text-gray-300"
+                  role="status"
+                >
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            ) : (
+              <button onClick={handleSubmit} className="w-full hover:bg-blue-900 bg-primary text-center py-2 font-bold text-xl">
+                Submit
+              </button>
+            )}
           </form>
         </div>
       </section>
       <section style={{ backgroundColor: "#8EADD0" }} className="py-16">
-      <h1 className="text-center md:text-2xl pb-8 w-full font-bold underline decoration-8 decoration-orange-200">
+        <h1 className="text-center md:text-2xl pb-8 w-full font-bold underline decoration-8 decoration-orange-200">
           HAPPY CLIENTS
         </h1>
-              <div className="flex justify-center my-8">
-              <div className="grid grid-cols-5 w-3/4 gap-y-8">
-                <div className="bg-white h-28 w-48"></div>
-                <div className="bg-white h-28 w-48"></div>
-                <div className="bg-white h-28 w-48"></div>
-                <div className="bg-white h-28 w-48"></div>
-                <div className="bg-white h-28 w-48"></div>
-                <div className="bg-white h-28 w-48"></div>
-                <div className="bg-white h-28 w-48"></div>
-                <div className="bg-white h-28 w-48"></div>
-              </div>
-              </div>
+        <div className="flex justify-center my-8">
+          <div className="grid grid-cols-5 w-3/4 gap-y-8">
+            <div className="bg-white h-28 w-48"></div>
+            <div className="bg-white h-28 w-48"></div>
+            <div className="bg-white h-28 w-48"></div>
+            <div className="bg-white h-28 w-48"></div>
+            <div className="bg-white h-28 w-48"></div>
+            <div className="bg-white h-28 w-48"></div>
+            <div className="bg-white h-28 w-48"></div>
+            <div className="bg-white h-28 w-48"></div>
+          </div>
+        </div>
       </section>
     </Layout>
   );
