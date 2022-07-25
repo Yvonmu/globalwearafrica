@@ -32,6 +32,15 @@ body {
 .text-secondary{
   color: #E7C7AC;
 }
+.bg-secondary{
+  background-color: #E7C7AC;
+}
+.gray{
+  background-color: #D9D9D9;
+}
+.soldier{
+  background-color: #272F07
+}
 
 /* Tab Container */
 .Tabs {
