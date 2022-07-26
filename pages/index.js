@@ -67,12 +67,12 @@ const Home = () => {
         </div>
       </section>
       {/* popular wear */}
-      <section className="my-12 w-full flex flex-wrap justify-center">
+      <section className="my-12 w-full flex flex-wrap md:justify-center">
         <h1 className="text-center pt-12 md:text-2xl w-full font-bold underline decoration-8 decoration-orange-200">
           POPULAR WEAR
         </h1>
-        <div className="flex sm:flex-wrap mt-12 w-3/5 space-x-28">
-          <div className="w-1/3 bg-black">
+        <div className="flex sm:flex-wrap mt-12 md:w-3/5 md:space-x-28">
+          <div className="md:w-1/3 sm:mb-8 sm:w-full bg-black">
             <div className="h-56">adf</div>
             <div className="bg-primary text-center p-2">
               <h1 className="uppercase text-2xl py-2 font-serif text-white">
@@ -84,7 +84,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="w-1/3 bg-black">
+          <div className="md:w-1/3 sm:mb-8 sm:w-full bg-black">
             <div className="h-56">adf</div>
             <div className="bg-primary text-center p-2">
               <h1 className="uppercase text-2xl py-2 font-serif text-white">
@@ -96,7 +96,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="w-1/3 bg-black">
+          <div className="md:w-1/3 sm:mb-8 sm:w-full bg-black">
             <div className="h-56">adf</div>
             <div className="bg-primary text-center p-2">
               <h1 className="uppercase text-2xl py-2 font-serif text-white">
@@ -113,7 +113,7 @@ const Home = () => {
       {/* about us */}
       <section className="flex sm:flex-wrap w-full">
         <div
-          className="w-3/4 text-center text-white py-24 px-16"
+          className="md:w-3/4 sm:w-full text-center text-white py-24 sm:px-2 md:px-16"
           style={{ backgroundColor: "#272F07" }}
         >
           <h1 className="md:text-5xl sm:text-2xl mb-4">
@@ -122,7 +122,7 @@ const Home = () => {
           <div className="w-full flex justify-center mb-6">
             <hr className="h-4 w-1/2" />
           </div>
-          <p>
+          <p className="sm:text-xs">
             GLOBAL WEAR AFRICA is a Global company registered under the register
             of companies in the Republic of Rwanda, with our partner company
             INFOGROUP GLOBAL registered in Turkey, Belgium Italy and a sister
@@ -132,7 +132,7 @@ const Home = () => {
             Defence market.{" "}
           </p>
           <div className="flex sm:flex-wrap w-full md:space-x-12">
-            <div className="w-1/3 my-12">
+            <div className="md:w-1/3 sm:mb-4 sm:w-full my-12">
               <h2 className="underline font-bold text-xl">MISSION</h2>
               <p>
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -140,7 +140,7 @@ const Home = () => {
                 doloremque{" "}
               </p>
             </div>
-            <div className="w-1/3 my-12">
+            <div className="md:w-1/3 sm:mb-4 sm:w-full my-12">
               <h2 className="underline font-bold text-xl">VISION</h2>
               <p>
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -148,7 +148,7 @@ const Home = () => {
                 doloremque{" "}
               </p>
             </div>
-            <div className="w-1/3 my-12">
+            <div className="md:w-1/3 sm:mb-8 sm:w-full my-12">
               <h2 className="underline font-bold text-xl">CORE VALUES</h2>
               <p>
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -164,13 +164,13 @@ const Home = () => {
             backgroundImage:
               "linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)),url(images/laptop.jpg)",
           }}
-          className="w-1/2 bg-fixed bg-no-repeat bg-cover text-white pt-12"
+          className="md:w-1/2 bg-fixed bg-no-repeat bg-cover text-white pt-12"
         >
           <h1 className="text-center">General Query</h1>
           <div className="w-full flex justify-center">
             <hr className="h-2 w-1/2" />
           </div>
-          <form className="mx-24 my-8">
+          <form className="md:mx-24 sm:mx-2 my-8">
             <div className="mb-2">
               <label
                 htmlFor="email"
@@ -307,15 +307,15 @@ const Home = () => {
           HAPPY CLIENTS
         </h1>
         <div className="flex justify-center my-8">
-          <div className="grid grid-cols-5 w-3/4 gap-y-8">
-            <div className="bg-white h-28 w-48"></div>
-            <div className="bg-white h-28 w-48"></div>
-            <div className="bg-white h-28 w-48"></div>
-            <div className="bg-white h-28 w-48"></div>
-            <div className="bg-white h-28 w-48"></div>
-            <div className="bg-white h-28 w-48"></div>
-            <div className="bg-white h-28 w-48"></div>
-            <div className="bg-white h-28 w-48"></div>
+          <div className="grid md:grid-cols-5 sm:grid-cols-2 w-3/4 sm:gap-4 gap-y-8">
+            <div className="bg-white md:h-28 md:w-48">dsd</div>
+            <div className="bg-white md:h-28 md:w-48">ew</div>
+            <div className="bg-white md:h-28 md:w-48">e</div>
+            <div className="bg-white md:h-28 md:w-48">e</div>
+            <div className="bg-white md:h-28 md:w-48">e</div>
+            <div className="bg-white md:h-28 md:w-48">e</div>
+            <div className="bg-white md:h-28 md:w-48">e</div>
+            <div className="bg-white md:h-28 md:w-48">e</div>
           </div>
         </div>
       </section>

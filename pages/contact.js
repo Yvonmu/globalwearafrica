@@ -45,10 +45,10 @@ const Contact = () => {
     <Layout>
       <section className="bg-[url('/images/course_1.jpg')] bg-no-repeat bg-cover h-screen grid place-items-center text-white md:-mt-36">
         <div>
-          <h1 className="text-6xl text-orange-200 font-bold">
+          <h1 className="md:text-6xl sm:text-3xl sm:text-center text-orange-200 font-bold">
             Global Wear Africa Ltd
           </h1>
-          <h4 className="text-xl mt-8">
+          <h4 className="text-xl mt-8 sm:text-center">
             <Link href="/" passHref>
               <span className="cursor-pointer hover:text-orange-200 hover:underline">
                 Home /
@@ -58,20 +58,20 @@ const Contact = () => {
           </h4>
         </div>
       </section>
-      <section className="flex justify-center pb-52 -mt-52">
-        <div className="w-3/4 shadow-2xl bg-secondary p-8">
+      <section className="flex justify-center pb-52 md:-mt-52">
+        <div className="md:w-3/4 shadow-2xl bg-secondary md:p-8 sm:p-2">
           <div className="w-full flex justify-center">
-            <div className="flex w-3/4 space-x-20 justify-center">
+            <div className="flex md:w-3/4 sm:flex-wrap md:space-x-20 md:justify-center">
               <div
                 style={{ backgroundColor: "#D9D9D9" }}
-                className="py-4 px-4 rounded-2xl w-1/2"
+                className="py-4 md:px-4 rounded-2xl md:w-1/2 sm:w-full"
               >
-                <h1 className="text-2xl pb-2 text-white text-center">
+                <h1 className="text-2xl pb-2 underline text-white text-center">
                   CONTACTS
                 </h1>
-                <div className="flex">
+                <div className="flex sm:flex-wrap px-2">
                   <div className="grid place-items-center">
-                    <BsFillTelephoneOutboundFill className="w-1/4 -mt-4 text-8xl" />
+                    <BsFillTelephoneOutboundFill className="w-1/4 md:-mt-4 sm:hidden text-8xl" />
                   </div>
                   <div>
                     <Link href="" passHref>
@@ -97,13 +97,13 @@ const Contact = () => {
               </div>
               <div
                 style={{ backgroundColor: "#D9D9D9" }}
-                className="py-4 px-4 rounded-2xl w-1/2"
+                className="py-4 px-4 rounded-2xl sm:mt-4 md:w-1/2"
               >
-                <h1 className="text-2xl pb-2 text-white text-center">
+                <h1 className="md:text-2xl text-xl underline pb-2 text-white text-center">
                   WORK TIME
                 </h1>
-                <div className="flex">
-                  <div className="grid place-items-center">
+                <div className="flex sm:flex-wrap">
+                  <div className="grid place-items-center sm:w-full">
                     <BsClock className="w-1/4 -mt-4 text-8xl" />
                   </div>
                   <div>
@@ -131,7 +131,7 @@ const Contact = () => {
               Talk to Us
             </h4>
           <div className="flex justify-center my-8">
-          <div className="w-3/5">
+          <div className="md:w-3/5">
             <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-8 my-4">
               <input
                 type="name"

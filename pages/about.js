@@ -17,10 +17,10 @@ const About = () => {
     <Layout>
       <section className="bg-[url('/images/course_1.jpg')] bg-no-repeat bg-cover h-screen grid place-items-center text-white md:-mt-36">
         <div>
-          <h1 className="text-6xl text-orange-200 font-bold">
+        <h1 className="md:text-6xl sm:text-3xl sm:text-center text-orange-200 font-bold">
             Global Wear Africa Ltd
           </h1>
-          <h4 className="text-xl mt-8">
+          <h4 className="text-xl mt-8 sm:text-center">
             <Link href="/" passHref>
               <span className="cursor-pointer hover:text-orange-200 hover:underline">
                 Home /
@@ -30,8 +30,8 @@ const About = () => {
           </h4>
         </div>
       </section>
-      <section className="flex justify-center -mt-52">
-        <div className="w-3/4 shadow-2xl bg-white p-8">
+      <section className="flex justify-center pb-52 md:-mt-52">
+        <div className="md:w-3/4 shadow-2xl bg-white md:p-8 sm:p-2">
           <div className="flex sm:flex-wrap px-8 space-x-4">
             <div className=" w-1/4">
               <h1 className="md:text-3xl font-bold mr-12 text-center w-1/4">
@@ -76,7 +76,7 @@ const About = () => {
             className="-mx-8 my-12 p-8"
           >
             <h2 className="text-black md:text-2xl font-bold mb-8">Our Team</h2>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
               <div className="bg-white flex space-x-8 p-4">
                 <div className="h-24 w-24">
                   <img src="images/me.png" alt="me" className="rounded-full" />
