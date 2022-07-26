@@ -164,7 +164,7 @@ const Home = () => {
             backgroundImage:
               "linear-gradient(rgba(0,0,0, 0.6), rgba(0,0,0, 0.6)),url(images/laptop.jpg)",
           }}
-          className="md:w-1/2 bg-fixed bg-no-repeat bg-cover text-white pt-12"
+          className="md:w-1/2 sm:w-full bg-fixed bg-no-repeat bg-cover text-white pt-12"
         >
           <h1 className="text-center">General Query</h1>
           <div className="w-full flex justify-center">
