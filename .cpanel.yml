@@ -1,6 +1,6 @@
 version: 2
 app:
-  name: globalwear
+  name: next-app
   type: next
 formation:
   web:
