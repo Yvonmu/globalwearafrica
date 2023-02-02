@@ -1,0 +1,12 @@
+version: 2
+app:
+  name: globalwear
+  type: next
+formation:
+  web:
+    quantity: 1
+    size: 512MB
+build:
+  command: npm run build
+start:
+  command: npm start
